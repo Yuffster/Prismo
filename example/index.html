@@ -1,0 +1,140 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Prismo Example</title>
+	</head>
+	<body>
+
+	<h1>Prismo Template Example</h1>
+
+	<article id="user1">
+
+		<h1>User 1</h1>
+
+		<p>
+			In your console, try <code>user2.set({*key*:*value*})</code>
+			to change the data displayed.
+		</p>
+
+		<h2>Attachment #1</h2>
+		<div class="container"> </div>
+
+		<h2>Attachment #2</h2>
+		<div class="container"> </div>
+
+		<h2>Attachment #3</h2>
+		<div class="container"> </div>
+
+		<h2>Attachment #4</h2>
+		<div class="container"> </div>
+
+	</article>
+
+	<article id="user2">
+
+		<h1>User 2</h1>
+
+		<p>
+			In your console, try <code>user2.set({*key*:*value*})</code>
+			to change the data displayed.
+		</p>
+
+		<h2>Attachment #1</h2>
+		<div class="container"> </div>
+
+		<h2>Attachment #2</h2>
+		<div class="container"> </div>
+
+		<h2>Attachment #3</h2>
+		<div class="container"> </div>
+
+		<h2>Attachment #4</h2>
+		<div class="container"> </div>
+
+	</article>
+
+<script type="text/logical" name="userTemplate">
+
+	<div class="user">
+
+		<p>
+			Hello! 
+		</p>
+		<p>
+
+			{{ if (name): }}
+				My name is {{= name }}
+			{{ else: }}
+				I have no name
+			{{ end }} 
+
+			and 
+
+			{{ if (food): }}
+				my favorite food is {{= food }}.
+			{{ else: }}
+				I don't like food.
+			{{ end }}
+		</p>
+
+
+		<p>
+			{{ if (food): }}
+				{{= food }} are my favorite food because they're delicious.
+			{{ end }}
+		</p>
+
+		<p>
+			The sum of all counts is
+			<span class="counter">
+				"{{= count }}"
+			</span>
+			so far.
+		</p>
+
+	</div>
+
+</script>
+
+<script src="../lib/logical.js"></script>
+<script src="../lib/prismo.js"></script>
+
+<script>
+UserView = Prismo.createView('userTemplate', {
+	name:'',
+	food:'',
+	count: function(val) {
+		return (this.count || 0)+val;
+	}
+});
+
+user1 = UserView.attach('#user1 .container');
+user1.set({ name: 'Prismo', food: 'pickles', count: 1 });
+user1.set({ count: 3 });
+user1.set({ count: 5 });
+
+c = 0;
+
+user2 = UserView.attach('#user2 .container');
+user2.set({ name: 'Jake', food: 'bacon pancakes', count: 3 });
+
+(function foo(){
+	window.setTimeout(function() {
+		user2.set({count: 1});
+		foo();
+	}, 100);
+}());
+
+(function foo(){
+	window.setTimeout(function() {
+		user1.set({count: 1});
+		foo();
+	}, 50);
+}());
+
+</script>
+
+
+	</body>
+</html>
