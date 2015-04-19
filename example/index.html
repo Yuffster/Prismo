@@ -123,15 +123,15 @@ user2.set({ name: 'Jake', food: 'bacon pancakes', count: 3 });
 	window.setTimeout(function() {
 		user2.set({count: 1});
 		foo();
-	}, 100);
-}());
+	}, 1000);
+})();
 
 (function foo(){
 	window.setTimeout(function() {
 		user1.set({count: 1});
 		foo();
-	}, 50);
-}());
+	}, 500);
+})();
 
 </script>
 
