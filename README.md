@@ -71,7 +71,7 @@ UserView = Prismo.createView('userTemplate', {
 You've just created a new View!  You can now attach that view to a DOM node.  This will render the template within that node.
 
 ```javascript
-prismoView = UserView.attach('#user1 .container')
+prismo = UserView.attach('#user1 .container')
 ```
 
 Now we can set data on the view, and have the view update automatically!
