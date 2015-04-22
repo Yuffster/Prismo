@@ -188,7 +188,7 @@ Creates a View handler based on given parameters.  The new View is returned.
 ##### Arguments
 
 * **template_name** (string): The name of the template.  Will be appended to the template_selector config value in the form of a name attribute.
-* **fields** (object): An object containing the fields required to render the template, along with default values or optional transformation methods. See the section of this document entitled [Transformation Methods](#transformation_methods) for more information.
+* **fields** (object): An object containing the fields required to render the template, along with default values or optional transformation methods. See the section of this document entitled [Transformation Methods](#transformation-methods) for more information.
 
 #### View.attach
 
