@@ -155,3 +155,11 @@ prismo.set({ count: 4 }); // Will update count to 10.
 You're actually sending the values to the count method.
 
 Notice that the count method has access to a copy of all the variables currently set within the template.
+
+## Pending Features
+
+Prismo is only half complete.  The point is to dynamically compose views, which isn't happening at the moment, because it doesn't support lists or recursive data structures.
+
+If you're interested in seeing what that would look like, forking or starring this project is a great way to let me know.  Otherwise, it'll stay on the back burner for a while.
+
+Also, no real work has been done for cross-browser compatibility issues, and there's a lot of low-level node traversal that will break in lots of browsers.
