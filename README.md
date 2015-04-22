@@ -38,13 +38,13 @@ In other words, it takes the HTML above and expands it to something like:
 <div class="user">
 	
 	<p data-bind="name food" data-component-id="14ce1eb788">
-		Hello, my name is {{= name }}, and my favorite food is {{= food}}!
+		Hello, my name is Prismo, and my favorite food is pickles!
 	</p>
 	
 	<p>
 		My count has been updated 
 		<span data-bind="count" data-component-id="14ce1eb788">
-			{{= count }}
+			0
 		</span> times!
 	</p>
 
