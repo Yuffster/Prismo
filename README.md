@@ -43,7 +43,7 @@ In other words, it takes the HTML above and expands it to something like:
 	
 	<p>
 		My count has been updated 
-		<span data-bind="count" data-component-id="14ce1eb788">
+		<span data-bind="count" data-component-id="14ce1eb756">
 			0
 		</span> times!
 	</p>
