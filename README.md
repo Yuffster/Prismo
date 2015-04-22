@@ -8,6 +8,8 @@ Afterwards, Prismo works its magic to search through all of your templates and a
 
 At the moment, Prismo is an **early alpha** proof-of-concept, which means you should try it, and if you like it, show it some love with a fork or a star!  Provide feedback about how you'd like to use it, and we'll work on congifuration values which follow your ideal workflow.
 
+## What Does Prismo Do?
+
 Let's say you have a view like this:
 
 ```html
