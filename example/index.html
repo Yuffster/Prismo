@@ -105,6 +105,7 @@ UserView = Prismo.createView('userTemplate', {
 	name:'',
 	food:'',
 	count: function(val) {
+		this.name = "Foo";
 		return (this.count || 0)+val;
 	}
 });
@@ -112,7 +113,7 @@ UserView = Prismo.createView('userTemplate', {
 user1 = UserView.attach('#user1 .container');
 user1.set({ name: 'Prismo', food: 'pickles', count: 1 });
 user1.set({ count: 3 });
-user1.set({ count: 5 });
+user1.set({ food: 'bacon' });
 
 c = 0;
 
