@@ -105,6 +105,6 @@ prismo.set({ count: 5 }); // Will update count to 6.
 prismo.set({ count: 4 }); // Will update count to 10.
 ```
 
-You're actually sending the value of 1 to the count method.
+You're actually sending the values to the count method.
 
 Notice that the count method has access to a copy of all the variables currently set within the template.
