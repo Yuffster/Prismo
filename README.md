@@ -156,6 +156,55 @@ You're actually sending the values to the count method.
 
 Notice that the count method has access to a copy of all the variables currently set within the template.
 
+## Complete API Documentation
+
+### Prismo
+
+Prismo is the main API wrapper.
+
+#### Prismo.config(key, value)
+
+The config method changes the default configuration of how Prismo finds and renders views.
+
+##### Arguments
+
+- **key** (string): A string representing the key of the config value you'd like to change.
+- **value** (mixed): The new value.
+
+##### Current config values
+
+* **expression_match** (regex): A regular expression which will return logical template fragments.  Defaults to `/\{\{(.*?)\}\}/g`.
+
+* **comment_match** (regex): A regular expression containing which expression blocks to ignore.  Defaults to `/^#/`.
+
+* **template_engine** (object): An alternative template engine to Logical.  Must mimick the Logical API syntax.  Defaults to Logical.
+
+* **template_selector** (string): the CSS selector to find template fragments within the DOM (which will also be appended with a name attribute).  Defaults to `script[type="text/logical"]`.
+
+#### Prismo.createView
+
+Creates a View handler based on given parameters.  The new View is returned.
+
+##### Arguments
+
+* **template_name** (string): The name of the template.  Will be appended to the template_selector config value in the form of a name attribute.
+* **fields** (object): An object containing the fields required to render the template, along with default values or optional transformation methods.
+
+#### View.attach
+
+Attaches the View to a new DOM node and returns a new AttachedView instance.
+
+##### Arguments
+
+* **node**: A DOM node.  This node will be emptied and the rendered template will replace it.
+
+#### AttachedView.set
+
+The set method takes, alternatively, a key/value pair or an object containing all data to be reset.
+
+* **key** (string): The field name for the data to be set.
+* **value** (mixed): The value to be set.
+
 ## Pending Features
 
 Prismo is only half complete.  The point is to dynamically compose views, which isn't happening at the moment, because it doesn't support lists or recursive data structures.
