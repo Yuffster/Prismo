@@ -8,6 +8,51 @@ Afterwards, Prismo works its magic to search through all of your templates and a
 
 At the moment, Prismo is an **early alpha** proof-of-concept, which means you should try it, and if you like it, show it some love with a fork or a star!  Provide feedback about how you'd like to use it, and we'll work on congifuration values which follow your ideal workflow.
 
+Let's say you have a view like this:
+
+```html
+<div class="user">
+	
+	<p>
+		Hello, my name is {{= name }}, and my favorite food is {{= food}}!
+	</p>
+	
+	<p>
+		My count has been updated 
+		<span>
+			{{= count }}
+		</span>
+		times!
+	</p>
+
+</div>
+```
+
+Prismo takes data you've bound to this view and encases it in template fragments which reflect the variable dependencies of the template.
+
+In other words, it takes the HTML above and expands it to something like:
+
+```html
+<div class="user">
+	
+	<p data-bind="name food" data-component-id="14ce1eb788">
+		Hello, my name is {{= name }}, and my favorite food is {{= food}}!
+	</p>
+	
+	<p>
+		My count has been updated 
+		<span data-bind="count" data-component-id="14ce1eb788">
+			{{= count }}
+		</span> times!
+	</p>
+
+</div>
+```
+
+If you change the value of name or food, only the first `<p>` element is re-rendered.  If you change the value of `count`, only the span containing the count is re-rendered.
+
+To change how things are re-rendered, simply change the semantic structure of your HTML.  (In most View engines, this would take a significant amount more refactoring.)
+
 ## Example Usage
 
 For now, Prismo is hard-coded to find templates embedded in the HTML document as script tags using a type of "text/logical" to distinguish it from normal JavaScript.
