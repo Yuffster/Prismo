@@ -1,4 +1,4 @@
-# {{= Prismo's Artisinal Templates }}
+# {{= Prismo's Artisanal Templates }}
 
 Prismo is a super simple, dynamic front-end view engine built on top of [Logical.js](https://github.com/Yuffster/logical).
 
